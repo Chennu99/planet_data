@@ -1,0 +1,23 @@
+class Planet:
+    
+    def __init__(self, name_of_planet, no_of_moons, rings, surface_gases = None):
+        
+        self.name_of_planet = name_of_planet
+        self.no_of_moons = no_of_moons
+        self.rings = rings
+        self.surface_gases = surface_gases
+Mercury = Planet('Mercury',0,'No',[])
+Venus   = Planet('Venus',0,'No',['Carbon Dioxide','Nitrogen'])
+Earth   = Planet('Earth',1,'No',['Nitrogen','Oxygen'])
+Jupitor   = Planet('Jupitor',79,'Yes',['Helium','Hydrogen'])
+Saturn   = Planet('Saturn',83,'Yes',['Helium','Hydrogen'])
+Uranus   = Planet('Uranus',27,'Yes',['Helium','Hydrogen','Methane'])
+planets=[Mercury,Venus,Earth,Jupitor,Saturn,Uranus]
+def count_of_moons(planets):
+    moons={}
+    for planet in planets:
+        if planet.rings=="Yes":
+            moons[planet.name_of_planet]=planet.no_of_moons
+    return moons 
+planet_moons=count_of_moons(planets)
+print(planet_moons)
